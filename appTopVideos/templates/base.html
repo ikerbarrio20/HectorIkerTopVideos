@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>{% block titulo %}Top Video{% endblock %}</title>
+    {% block css %}    
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+  <div class="content pure-u-1 pure-u-md-3-4">
+    <div>
+        <!-- A wrapper for all the blog posts -->
+        <div class="posts">
+            <h1 class="content-subhead">Top Video</h1>
+            {% block contenido %}{% endblock %}
+        </div>
+
+        
+    </div>
+</div>
+</body>
+</html>

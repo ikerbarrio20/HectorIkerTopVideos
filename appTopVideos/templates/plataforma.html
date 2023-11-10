@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Datos de la plataforma</h2>
+
+{% if plataforma %}
+    <p><strong>Nombre: </strong> {{ plataforma.nombre}}</p>
+    <p><strong>Link: </strong><a href={{plataforma.link}}>{{ plataforma.link}}</a></p>
+    <p><strong>Vídeos: </strong></p>
+    {% if videos %}
+    {% for v in plataforma.videos.all %}
+    <ul>
+        <li>
+        {{v}}
+        </li>
+    </ul>  
+    {% endfor %} 
+    {% else %}
+        <p>No hay vídeos con esta categoría.</p>
+    {% endif %}
+{% else %}
+    <p>No existe esta plataforma.</p>
+{% endif %}
+{% endblock %}

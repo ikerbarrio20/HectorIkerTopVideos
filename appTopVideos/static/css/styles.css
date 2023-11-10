@@ -1,0 +1,30 @@
+body {
+    background-color: peachpuff;
+    margin-left: 2em;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+
+h2 {
+    border-bottom:1px black double;
+    margin-right: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+li{
+    color: black;
+    padding: 3px;
+}
+
+div.index {
+    margin-top: 20px;
+    width: 14%;
+    float: left;
+}

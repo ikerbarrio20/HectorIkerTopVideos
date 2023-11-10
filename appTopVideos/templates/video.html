@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Datos del vídeo</h2>
+{% if video %}
+
+  <p><strong>Nombre: </strong> {{ video.nombre}}</p>
+  <p><strong>Creador: </strong> {{ video.creador}}</p>
+  <p><strong>Descripción: </strong> {{ video.descripcion}}</p>
+  <p><strong>Categoría: </strong> {{ video.categorias}}</p>
+  <p><strong>Plataformas: </strong></p>
+  {% for p in video.plataformas.all %}
+  <ul>
+    <li>
+      <a href={{p.link}}>{{p}}</a>
+    </li>
+  </ul>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}

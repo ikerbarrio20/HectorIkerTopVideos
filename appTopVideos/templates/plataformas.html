@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Lista de plataformas</h2>
+{% if lista_plataformas %}
+    {% for p in lista_plataformas %}
+    <ul>
+        <li>
+            <a href="/appTopVideos/plataformas/{{ p.id }}">{{ p.nombre}}</a>
+        </li>
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>No hay plataformas creadas.</p>
+{% endif %}
+{% endblock %}
+

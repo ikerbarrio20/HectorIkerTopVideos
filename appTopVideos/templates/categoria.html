@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Detalles de la categoría</h2>
+
+{% if categoria %}
+    <p><strong>Nombre: </strong> {{ categoria.nombre}}</p>
+    <p><strong>Descripción: </strong> {{ categoria.descripcion}}</p>
+    <p><strong>Vídeos: </strong></p>
+    {% if videos %}
+    {% for v in categoria.videos.all %}
+    <ul>
+        <li>
+        {{v}}
+        </li>
+    </ul>  
+    {% endfor %}
+    {% else %}
+        <p>No hay videos con esta categoría.</p>
+    {% endif %}
+{% else %}
+    <p>No existe esta categoría.</p>
+{% endif %}
+{% endblock %}

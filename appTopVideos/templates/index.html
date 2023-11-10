@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+
+
+{% if lista_categorias %}
+  {% for c in lista_categorias %}
+  
+  <ul>
+      <li>
+          {{ c.nombre}}
+          {% if c.videos.all %}
+          <ul>
+            <li>
+              {{c.videos.all|first}}
+            </li>
+          </ul>
+          {% else %}
+          <p>No hay video para esta categoría.</p>
+          {% endif %}
+      </li>
+
+  </ul>
+  
+  {% endfor %}
+{% else %}
+  <p>No hay categorías creadas.</p>
+{% endif %}
+<div class="index">
+  <h2>Otros Links</h2>
+  <h3><a href="/appTopVideos/categorias">Lista de Categorias</a></h3>
+  <h3><a href="/appTopVideos/plataformas">Lista de Plataformas</a></h3>
+  <h3><a href="/appTopVideos/videos">Lista de Videos</a></h3>
+</div>
+{% endblock %}
+
+

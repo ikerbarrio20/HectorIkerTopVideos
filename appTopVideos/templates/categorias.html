@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+
+<h2>Lista de categorías</h2>
+{% if lista_categorias %}
+    {% for c in lista_categorias %}
+        <ul>
+            <li>
+            <a href="/appTopVideos/categorias/{{c.id}}">{{ c.nombre}}</a>
+            </li>
+        </ul>
+    {% endfor %}
+{% else %}
+    <p>No hay categorías creadas.</p>
+{% endif %}
+{% endblock %}

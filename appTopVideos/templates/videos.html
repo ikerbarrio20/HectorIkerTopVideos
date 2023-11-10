@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Listado de vídeos</h2>
+{% if lista_videos %}
+    {% for v in lista_videos %}
+    <ul>
+        <li>
+            <a href="/appTopVideos/videos/{{ v.id }}">{{ v.nombre}}</a>
+        </li>
+    
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>No hay vídeos creados.</p>
+{% endif %}
+{% endblock %}
